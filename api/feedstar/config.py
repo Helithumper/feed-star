@@ -8,6 +8,8 @@ ENV = os.getenv("FLASK_ENV")
 DEBUG = ENV == "development"
 SECRET_KEY = os.getenv("SECRET_KEY")
 
+VERSION = "0.0.1"
+
 SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URI")
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
