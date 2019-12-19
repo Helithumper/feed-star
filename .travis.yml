@@ -1,3 +1,5 @@
+sudo: required
+
 language: python
 
 services:
@@ -8,6 +10,6 @@ script:
 
 deploy:
   provider: script
-  script: docker login -u $DOCKER_USERNAME -p $DOCKER_TOKEN && ./tools/deploy_api.sh
+  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && ./tools/deploy_api.sh
   on:
     branch: master
