@@ -1,17 +1,17 @@
 .PHONY: build build-alpine clean test help default
 
-BIN_NAME=feedstar-api
+BIN_NAME=feed-star/api
 
 VERSION := $(shell grep "const Version " version/version.go | sed -E 's/.*"(.+)"$$/\1/')
 GIT_COMMIT=$(shell git rev-parse HEAD)
 GIT_DIRTY=$(shell test -n "`git status --porcelain`" && echo "+CHANGES" || true)
 BUILD_DATE=$(shell date '+%Y-%m-%d-%H:%M:%S')
-IMAGE_NAME := "helithumper/feedstar-api"
+IMAGE_NAME := "helithumper/feed-star/api"
 
 default: test
 
 help:
-	@echo 'Management commands for feedstar-api:'
+	@echo 'Management commands for feed-star/api:'
 	@echo
 	@echo 'Usage:'
 	@echo '    make build           Compile the project.'
@@ -27,7 +27,7 @@ help:
 build:
 	@echo "building ${BIN_NAME} ${VERSION}"
 	@echo "GOPATH=${GOPATH}"
-	go build -ldflags "-X github.com/helithumper/feedstar-api/version.GitCommit=${GIT_COMMIT}${GIT_DIRTY} -X github.com/helithumper/feedstar-api/version.BuildDate=${BUILD_DATE}" -o bin/${BIN_NAME}
+	go build -ldflags "-X github.com/helithumper/feed-star/api/version.GitCommit=${GIT_COMMIT}${GIT_DIRTY} -X github.com/helithumper/feed-star/api/version.BuildDate=${BUILD_DATE}" -o bin/${BIN_NAME}
 
 get-deps:
 	dep ensure
@@ -35,7 +35,7 @@ get-deps:
 build-alpine:
 	@echo "building ${BIN_NAME} ${VERSION}"
 	@echo "GOPATH=${GOPATH}"
-	go build -ldflags '-w -linkmode external -extldflags "-static" -X github.com/helithumper/feedstar-api/version.GitCommit=${GIT_COMMIT}${GIT_DIRTY} -X github.com/helithumper/feedstar-api/version.BuildDate=${BUILD_DATE}' -o bin/${BIN_NAME}
+	go build -ldflags '-w -linkmode external -extldflags "-static" -X github.com/helithumper/feed-star/api/version.GitCommit=${GIT_COMMIT}${GIT_DIRTY} -X github.com/helithumper/feed-star/api/version.BuildDate=${BUILD_DATE}' -o bin/${BIN_NAME}
 
 package:
 	@echo "building image ${BIN_NAME} ${VERSION} $(GIT_COMMIT)"
