@@ -1,0 +1,10 @@
+basePath: /api
+host: localhost
+info:
+  contact: {}
+  description: API Backing for the FeedStar News Aggregator
+  license: {}
+  title: FeedStar API
+  version: "1.0"
+paths: {}
+swagger: "2.0"

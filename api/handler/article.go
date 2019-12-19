@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"errors"
+	_ "errors"
 	"net/http"
 
 	_ "github.com/helithumper/feed-star/api/model"

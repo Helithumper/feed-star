@@ -1,8 +1,8 @@
 package handler
 
-// import (
-// 	"github.com/helithumper/feed-star/api/article"
-// )
+import (
+	"github.com/helithumper/feed-star/api/article"
+)
 
 type Handler struct {
 	articleStore article.Store

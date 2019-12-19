@@ -1,0 +1,13 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API Backing for the FeedStar News Aggregator",
+        "title": "FeedStar API",
+        "contact": {},
+        "license": {},
+        "version": "1.0"
+    },
+    "host": "localhost",
+    "basePath": "/api",
+    "paths": {}
+}

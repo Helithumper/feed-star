@@ -1,6 +1,6 @@
 .PHONY: build build-alpine clean test help default
 
-BIN_NAME=feed-star/api
+BIN_NAME=feedstar-api
 
 VERSION := $(shell grep "const Version " version/version.go | sed -E 's/.*"(.+)"$$/\1/')
 GIT_COMMIT=$(shell git rev-parse HEAD)

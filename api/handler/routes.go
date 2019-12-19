@@ -1,10 +1,11 @@
 package handler
 
 import (
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 func (h *Handler) Register(v1 *echo.Group) {
-	articles := v1.Group("/articles")
-	articles.GET("", h.Feed)
+	// articles := v1.Group("/articles")
+	// articles.GET("", )
+	// articles.GET("", )
 }
