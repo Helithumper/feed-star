@@ -1,0 +1,13 @@
+language: python
+
+services:
+  - docker
+
+script:
+  - './tools/test_api.sh'
+
+deploy:
+  provider: script
+  script: docker login -u $DOCKER_USERNAME -p $DOCKER_TOKEN && ./tools/deploy_api.sh
+  on:
+    branch: master
